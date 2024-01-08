@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Kumbh Sans", sans-serif !important;
+  background-color: #fefcff !important;
+}
+.addbtn {
+  border: 3px dotted black;
+}
+.logo {
+  line-height: 1;
+}
+.logoicon {
+  color: #f4b03f;
+}
+.nav {
+  background-color: #f0f1f3;
+}
+.popupbtn::after {
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/all.min.css" />
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <title>MemoVerse</title>
+  </head>
+  <body>
+    <nav class="p-3 nav">
+      <div class="logo d-flex align-items-center">
+        <i class="fa-solid logoicon fa-note-sticky fa-fw fa-3x"></i>
+        <div class="fw-bold">MemoVerse</div>
+      </div>
+    </nav>
+    <div class="memo_container position-relative vh-100">
+      <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This card has even longer
+                  content than the first to show that equal height action.
+                </p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center position-relative"
+              >
+                <small class="text-body-secondary">January 8,2024</small>
+                <button class="btn d-block popupbtn">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </button>
+                <div
+                  class="popupmenu bg-info position-absolute end-0 me-5 top-50"
+                >
+                  <button class="btn d-block w-100 text-start">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <span>Edit</span>
+                  </button>
+                  <button class="btn d-block w-100 text-start">
+                    <i class="fa-regular fa-trash-can"></i> <span>Delete</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="addbtnContainer position-fixed bottom-0 end-0 mb-3 me-3">
+        <button class="rounded-circle addbtn p-3 d-block">
+          <i
+            class="fa-solid fa-plus fa-fw d-flex justify-content-center align-items-center"
+          ></i>
+        </button>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
