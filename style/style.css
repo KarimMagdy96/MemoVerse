@@ -41,7 +41,16 @@ footer {
   padding-bottom: 110px;
 }
 #mainBody {
-  overflow: hidden !important;
   width: 17.5rem;
-  height: 10.5rem;
+  height: 15.5rem;
+}
+#mainBody::-webkit-scrollbar {
+  width: 4px;
+}
+#mainBody::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#mainBody::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
 }
