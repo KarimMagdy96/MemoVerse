@@ -71,6 +71,8 @@ function deleteNote(note) {
   localStorage.setItem("notes", JSON.stringify(notes));
   document.getElementById("addNoteBtn").innerHTML = "Add Note";
   addNoteBtn.classList.replace("bg-warning", "bg-success");
+  document.getElementById("takeNoteTitle").value = "";
+  document.getElementById("takeNoteText").value = "";
 }
 
 function editNote(index) {
