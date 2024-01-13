@@ -52,7 +52,7 @@ function displayNotes() {
   for (var i = 0; i < notes.length; i++) {
     container += `
     <div class=" mt-4 col-lg-3 col-md-6  ">
-    <div class="p-2 bg-white border border-white border-5 rounded-3 shadow">
+    <div class="p-2 bg-white  border-bottom border-success border-2 rounded-3 shadow ">
         <div class="title_container d-flex flex-column">
           <h3 id="mainTitle">${notes[i].title}</h3>
         </div>
