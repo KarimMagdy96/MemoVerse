@@ -20,6 +20,7 @@ nav {
 }
 .logoTitle {
   color: #38323e !important;
+  font-weight: 800;
 }
 .takeNoteForm {
   max-width: max-content;
