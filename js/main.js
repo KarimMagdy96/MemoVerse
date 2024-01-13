@@ -106,7 +106,10 @@ function updateNote(noteIndex) {
 searchNote.onkeyup = function () {
   var container = "";
   for (var i = 0; i < notes.length; i++) {
-    if (notes[i].title.toLowerCase().includes(searchNote.value.toLowerCase())) {
+    if (
+      notes[i].title.toLowerCase().includes(searchNote.value.toLowerCase()) ||
+      notes[i].text.toLowerCase().includes(searchNote.value.toLowerCase())
+    ) {
       container += `
     <div class=" mt-4 col-lg-3 col-md-6  ">
     <div class="p-2 bg-white  border-bottom border-success border-2 rounded-3 shadow ">
