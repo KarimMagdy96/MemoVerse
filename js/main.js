@@ -6,6 +6,7 @@ var mainTitle = document.getElementById("mainTitle");
 var mainBody = document.getElementById("mainBody");
 var mainNoteContainer = document.getElementById("mainNoteContainer");
 var addNoteRevelbtn = document.getElementById("addNoteRevelbtn");
+var addnoteHeader = document.getElementById("addnoteHeader");
 var takeNoteLayer = document.getElementById("takeNoteLayer");
 var closeToggle = document.getElementById("closeToggle");
 var noteIndex = 0;
@@ -21,6 +22,11 @@ addNoteRevelbtn.onclick = function () {
 };
 closeToggle.onclick = function () {
   takeNoteLayer.classList.toggle("d-none");
+  addNoteBtn.classList.replace("bg-warning", "bg-success");
+  document.getElementById("takeNoteTitle").value = "";
+  document.getElementById("takeNoteText").value = "";
+  addnoteHeader.innerHTML = "ADD NEW NOTE";
+  document.getElementById("addNoteBtn").innerHTML = "Add Note";
 };
 
 addNoteBtn.onclick = function () {
@@ -82,6 +88,7 @@ function editNote(index) {
   addNoteBtn.innerHTML = "Update Note";
   addNoteBtn.classList.replace("bg-success", "bg-warning");
   takeNoteLayer.classList.toggle("d-none");
+  addnoteHeader.innerHTML = "Update Note";
 }
 
 function updateNote(noteIndex) {
@@ -93,4 +100,5 @@ function updateNote(noteIndex) {
   addNoteBtn.classList.replace("bg-warning", "bg-success");
   document.getElementById("takeNoteTitle").value = "";
   document.getElementById("takeNoteText").value = "";
+  addnoteHeader.innerHTML = "ADD NEW NOTE";
 }
