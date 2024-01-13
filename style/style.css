@@ -44,6 +44,10 @@ footer {
 #mainBody {
   width: 100%;
   height: 15.5rem;
+  color: #767676 !important;
+}
+#mainTitle {
+  color: #2e2d32;
 }
 #mainBody::-webkit-scrollbar {
   width: 4px;
