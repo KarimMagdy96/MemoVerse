@@ -32,7 +32,7 @@
     </nav>
     <div class="container mt-2">
       <div
-        class="position-absolute top-0 end-0 h-100 start-0 bottom-0 d-flex justify-content-center align-items-center d-none"
+        class="position-absolute top-0 end-0 h-100 start-0 bottom-0 d-flex justify-content-center align-items-center d-none z-3"
         id="takeNoteLayer"
       >
         <div
@@ -74,7 +74,11 @@
         </div>
       </div>
 
-      <div class="row notePadding" id="noteContainer"></div>
+      <div
+        class="row notePadding"
+        id="noteContainer"
+        data-masonry='{"percentPosition": true }'
+      ></div>
     </div>
 
     <footer class="fixed-bottom text-center shadow">
@@ -85,6 +89,12 @@
         ></i>
       </button>
     </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+      integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+      crossorigin="anonymous"
+      async
+    ></script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/main.js"></script>
   </body>
