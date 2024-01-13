@@ -69,6 +69,8 @@ function deleteNote(note) {
   notes.splice(note, 1);
   displayNotes();
   localStorage.setItem("notes", JSON.stringify(notes));
+  document.getElementById("addNoteBtn").innerHTML = "Add Note";
+  addNoteBtn.classList.replace("bg-warning", "bg-success");
 }
 
 function editNote(index) {
