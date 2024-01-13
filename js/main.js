@@ -8,6 +8,7 @@ var mainBody = document.getElementById("mainBody");
 var mainNoteContainer = document.getElementById("mainNoteContainer");
 var addNoteRevelbtn = document.getElementById("addNoteRevelbtn");
 var takeNoteLayer = document.getElementById("takeNoteLayer");
+var closeToggle = document.getElementById("closeToggle");
 var noteIndex = 0;
 
 if (localStorage.getItem("notes") != null) {
@@ -17,6 +18,9 @@ if (localStorage.getItem("notes") != null) {
   notes = [];
 }
 addNoteRevelbtn.onclick = function () {
+  takeNoteLayer.classList.toggle("d-none");
+};
+closeToggle.onclick = function () {
   takeNoteLayer.classList.toggle("d-none");
 };
 

@@ -15,22 +15,73 @@
     <title>MemoVerse</title>
   </head>
   <body>
-    <div class="container mt-5 ">
-      <button class="border-0 btn"><i class="fa-solid fa-plus circle-icon bg-success p-4 rounded-circle fw-bold text-white fa-shake position-fixed bottom-0 end-0 m-4 z-3" id="addNoteRevelbtn"></i></button>
-      <div class="  position-absolute top-0 end-0 start-0 bottom-0 d-flex justify-content-center align-items-center d-none" id="takeNoteLayer">
-        <div class="takeNoteForm 0 p-4 rounded-3  bg-white shadow border-bottom border-secondary border-5  ">
-          <h5 class=" fw-bold">ADD NEW NOTE</h5>
-          <label for="takeNoteTitle" class="d-block fw-semibold mb-1 text-secondary">Title</label>
-          <input type="text" name="TitleInput" id="takeNoteTitle" class="d-block mb-3 p-2 rounded-3 w-100 border-1" placeholder="your title..." />
-          <label for="noteText" class="d-block fw-semibold mb-1 text-secondary">Description</label>
-          <textarea name="noteText" class="d-block p-2 rounded-3 border-1" id="takeNoteText" cols="30" rows="5" placeholder="your note..."></textarea>
-          <button class=" py-2 px-5 fw-semibold mt-4 border-0 bg-success text-white rounded-5 shadow" id="addNoteBtn">Save</button>
+    <nav class="p-1 pt-2">
+      <div class="logo mb-2 d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-note-sticky fs-1 text-warning"></i>
+        <h5 class="ms-2 fw-bold text-dark">MemoVerse</h5>
+      </div>
+      <div class="search">
+        <input
+          type="text"
+          class="d-block mb-3 p-2 rounded-3 w-75 m-auto border border-success border-1 searchInput"
+          placeholder="🔍 Search notes..."
+        />
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <div
+        class="position-absolute top-0 end-0 start-0 bottom-0 d-flex justify-content-center align-items-center d-none"
+        id="takeNoteLayer"
+      >
+        <div
+          class="takeNoteForm 0 p-4 rounded-4 bg-white shadow border-bottom border-success border-5 position-relative"
+        >
+          <button id="closeToggle" class="d-block ms-auto p-1 btn">
+            <i class="fa-regular fa-circle-xmark fs-4 fa-beat"></i>
+          </button>
+          <h5 class="fw-bold">ADD NEW NOTE</h5>
+          <label
+            for="takeNoteTitle"
+            class="d-block fw-semibold mb-1 text-secondary"
+            >Title</label
+          >
+          <input
+            type="text"
+            name="TitleInput"
+            id="takeNoteTitle"
+            class="d-block mb-3 p-2 rounded-3 w-100 border-1"
+            placeholder="your title..."
+          />
+          <label for="noteText" class="d-block fw-semibold mb-1 text-secondary"
+            >Description</label
+          >
+          <textarea
+            name="noteText"
+            class="d-block p-2 rounded-3 border-1"
+            id="takeNoteText"
+            cols="30"
+            rows="5"
+            placeholder="your note..."
+          ></textarea>
+          <button
+            class="py-2 px-5 fw-semibold mt-4 border-0 bg-success text-white rounded-5 shadow"
+            id="addNoteBtn"
+          >
+            Save
+          </button>
         </div>
       </div>
-     
-      <div class="row" id="noteContainer">
 
-      </div>
+      <div class="row" id="noteContainer"></div>
+    </div>
+    <footer class="bg-black text-md-center text-end">
+      <button class="border-0 btn">
+        <i
+          class="fa-solid fa-circle-plus fa-3x circle-icon bg-success p-2 text-bg-success rounded-circle fw-bold text-white m-4 shadow"
+          id="addNoteRevelbtn"
+        ></i>
+      </button>
+    </footer>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/main.js"></script>
   </body>
