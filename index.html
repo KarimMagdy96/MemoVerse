@@ -15,56 +15,22 @@
     <title>MemoVerse</title>
   </head>
   <body>
-    <nav class="p-3 nav">
-      <div class="logo d-flex align-items-center">
-        <i class="fa-solid logoicon fa-note-sticky fa-fw fa-3x"></i>
-        <div class="fw-bold">MemoVerse</div>
-      </div>
-    </nav>
-    <div class="memo_container position-relative vh-100">
-      <div class="container mt-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </p>
-              </div>
-              <div
-                class="card-footer d-flex justify-content-between align-items-center position-relative"
-              >
-                <small class="text-body-secondary">January 8,2024</small>
-                <button class="btn d-block popupbtn">
-                  <i class="fa-solid fa-ellipsis"></i>
-                </button>
-                <div
-                  class="popupmenu bg-info position-absolute end-0 me-5 top-50"
-                >
-                  <button class="btn d-block w-100 text-start">
-                    <i class="fa-regular fa-pen-to-square"></i>
-                    <span>Edit</span>
-                  </button>
-                  <button class="btn d-block w-100 text-start">
-                    <i class="fa-regular fa-trash-can"></i> <span>Delete</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="container mt-5 ">
+      <button class="border-0 btn"><i class="fa-solid fa-plus circle-icon bg-success p-4 rounded-circle fw-bold text-white fa-shake position-fixed bottom-0 end-0 m-4 z-3" id="addNoteRevelbtn"></i></button>
+      <div class="  position-absolute top-0 end-0 start-0 bottom-0 d-flex justify-content-center align-items-center d-none" id="takeNoteLayer">
+        <div class="takeNoteForm 0 p-4 rounded-3  bg-white shadow border-bottom border-secondary border-5  ">
+          <h5 class=" fw-bold">ADD NEW NOTE</h5>
+          <label for="takeNoteTitle" class="d-block fw-semibold mb-1 text-secondary">Title</label>
+          <input type="text" name="TitleInput" id="takeNoteTitle" class="d-block mb-3 p-2 rounded-3 w-100 border-1" placeholder="your title..." />
+          <label for="noteText" class="d-block fw-semibold mb-1 text-secondary">Description</label>
+          <textarea name="noteText" class="d-block p-2 rounded-3 border-1" id="takeNoteText" cols="30" rows="5" placeholder="your note..."></textarea>
+          <button class=" py-2 px-5 fw-semibold mt-4 border-0 bg-success text-white rounded-5 shadow" id="addNoteBtn">Save</button>
         </div>
       </div>
-      <div class="addbtnContainer position-fixed bottom-0 end-0 mb-3 me-3">
-        <button class="rounded-circle addbtn p-3 d-block">
-          <i
-            class="fa-solid fa-plus fa-fw d-flex justify-content-center align-items-center"
-          ></i>
-        </button>
+     
+      <div class="row" id="noteContainer">
+
       </div>
-    </div>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/main.js"></script>
   </body>

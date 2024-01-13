@@ -1,5 +1,88 @@
 console.log("Hello World");
-var test = document.getElementById("test");
-var starter = document.getElementById("starter");
+var takeNoteTitle = document.getElementById("takeNoteTitle");
+var takeNoteText = document.getElementById("takeNoteText");
+var addNoteBtn = document.getElementById("addNoteBtn");
+var noteContainer = document.getElementById("noteContainer");
+var mainTitle = document.getElementById("mainTitle");
+var mainBody = document.getElementById("mainBody");
+var mainNoteContainer = document.getElementById("mainNoteContainer");
+var addNoteRevelbtn = document.getElementById("addNoteRevelbtn");
+var takeNoteLayer = document.getElementById("takeNoteLayer");
+var noteIndex = 0;
 
-starter.onclick = function () {};
+if (localStorage.getItem("notes") != null) {
+  var notes = JSON.parse(localStorage.getItem("notes"));
+  displayNotes();
+} else {
+  notes = [];
+}
+addNoteRevelbtn.onclick = function () {
+  takeNoteLayer.classList.toggle("d-none");
+};
+
+addNoteBtn.onclick = function () {
+  if (addNoteBtn.classList.contains("bg-warning")) {
+    updateNote(noteIndex);
+    takeNoteLayer.classList.toggle("d-none");
+  } else {
+    var note = {
+      title: takeNoteTitle.value,
+      text: takeNoteText.value,
+    };
+    notes.push(note);
+    displayNotes();
+    localStorage.setItem("notes", JSON.stringify(notes));
+    takeNoteLayer.classList.toggle("d-none");
+    document.getElementById("takeNoteTitle").value = "";
+    document.getElementById("takeNoteText").value = "";
+  }
+};
+
+function displayNotes() {
+  var container = "";
+  for (var i = 0; i < notes.length; i++) {
+    container += `
+    <div class="p-3 mt-4 col-lg-3 col-md-6 bg-transparent">
+    <div class="m-1 bg-white border border-white border-5 rounded-3 shadow">
+        <div class="title_container d-flex flex-column">
+          <h3 id="mainTitle">${notes[i].title}</h3>
+        </div>
+        <div class="noteBody mt-3 mb-2">
+          <p id="mainBody">${notes[i].text}</p>
+        </div>
+       <div class="d-flex justify-content-end">
+       <button onclick="editNote(${i})" class="btn" id="addNoteBtn"><i class="fa-regular fa-pen-to-square"></i></button>
+       <button onclick="deleteNote(${i})" class="btn" id="addNoteBtn"><i class="fa-regular fa-trash-can"></i></button>
+       </div>
+       </div>
+      </div>
+    `;
+  }
+
+  document.getElementById("noteContainer").innerHTML = container;
+}
+
+function deleteNote(note) {
+  notes.splice(note, 1);
+  displayNotes();
+  localStorage.setItem("notes", JSON.stringify(notes));
+}
+
+function editNote(index) {
+  document.getElementById("takeNoteTitle").value = notes[index].title;
+  document.getElementById("takeNoteText").value = notes[index].text;
+  noteIndex = index;
+  addNoteBtn.innerHTML = "Update Note";
+  addNoteBtn.classList.replace("bg-success", "bg-warning");
+}
+
+function updateNote(noteIndex) {
+  notes[noteIndex].title = document.getElementById("takeNoteTitle").value;
+  notes[noteIndex].text = document.getElementById("takeNoteText").value;
+  displayNotes();
+  localStorage.setItem("notes", JSON.stringify(notes));
+  document.getElementById("addNoteBtn").innerHTML = "Add Note";
+  addNoteBtn.classList.replace("bg-warning", "bg-success");
+  document.getElementById("takeNoteTitle").value = "";
+  document.getElementById("takeNoteText").value = "";
+}
