@@ -52,12 +52,12 @@ function displayNotes() {
   for (var i = 0; i < notes.length; i++) {
     container += `
     <div class=" mt-4 col-lg-3 col-md-6  ">
-    <div class="p-2 bg-white  border-bottom border-success border-2 rounded-3 shadow ">
+    <div class="p-2 px-4 bg-white  border-bottom border-success border-2 rounded-3 shadow ">
         <div class="title_container d-flex flex-column">
-          <h4 id="mainTitle" class='pt-3'>${notes[i].title}</h4>
+          <h4 id="mainTitle" class='pt-3 '>${notes[i].title}</h4>
         </div>
         <div class="noteBody mt-3 mb-2">
-          <p id="mainBody" class='overflow-auto px-2'>${notes[i].text}</p>
+          <p id="mainBody" class='overflow-auto '>${notes[i].text}</p>
         </div>
        <div class="d-flex justify-content-end">
        <button onclick="editNote(${i})" class="btn" id="addNoteBtn"><i class="fa-regular fa-pen-to-square"></i></button>
