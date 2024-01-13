@@ -1,4 +1,3 @@
-console.log("Hello World");
 var takeNoteTitle = document.getElementById("takeNoteTitle");
 var takeNoteText = document.getElementById("takeNoteText");
 var addNoteBtn = document.getElementById("addNoteBtn");
