@@ -78,6 +78,7 @@ function editNote(index) {
   noteIndex = index;
   addNoteBtn.innerHTML = "Update Note";
   addNoteBtn.classList.replace("bg-success", "bg-warning");
+  takeNoteLayer.classList.toggle("d-none");
 }
 
 function updateNote(noteIndex) {
