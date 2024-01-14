@@ -29,27 +29,42 @@ addNoteRevelbtn.onclick = function () {
 closeToggle.onclick = function () {
   takeNoteLayer.classList.toggle("d-none");
   addNoteBtn.classList.replace("bg-warning", "bg-success");
-  document.getElementById("takeNoteTitle").value = "";
-  document.getElementById("takeNoteText").value = "";
+  takeNoteTitle.value = "";
+  takeNoteText.value = "";
   addnoteHeader.innerHTML = "ADD NEW NOTE";
   document.getElementById("addNoteBtn").innerHTML = "Add Note";
 };
 
 addNoteBtn.onclick = function () {
-  if (addNoteBtn.classList.contains("bg-warning")) {
-    updateNote(noteIndex);
-    takeNoteLayer.classList.toggle("d-none");
+  if (takeNoteTitle.value == "" || takeNoteText.value == "") {
+    takeNoteTitle.classList.add("form-control");
+    takeNoteTitle.classList.add("is-invalid");
+    takeNoteText.classList.add("form-control");
+    takeNoteText.classList.add("is-invalid");
   } else {
-    var note = {
-      title: takeNoteTitle.value,
-      text: takeNoteText.value,
-    };
-    notes.push(note);
-    displayNotes();
-    localStorage.setItem("notes", JSON.stringify(notes));
-    takeNoteLayer.classList.toggle("d-none");
-    document.getElementById("takeNoteTitle").value = "";
-    document.getElementById("takeNoteText").value = "";
+    if (addNoteBtn.classList.contains("bg-warning")) {
+      updateNote(noteIndex);
+      takeNoteLayer.classList.toggle("d-none");
+      takeNoteText.classList.remove("form-control");
+      takeNoteText.classList.remove("is-invalid");
+      takeNoteTitle.classList.remove("form-control");
+      takeNoteTitle.classList.remove("is-invalid");
+    } else {
+      var note = {
+        title: takeNoteTitle.value,
+        text: takeNoteText.value,
+      };
+      notes.push(note);
+      displayNotes();
+      localStorage.setItem("notes", JSON.stringify(notes));
+      takeNoteLayer.classList.toggle("d-none");
+      takeNoteTitle.value = "";
+      takeNoteText.value = "";
+      takeNoteText.classList.remove("form-control");
+      takeNoteText.classList.remove("is-invalid");
+      takeNoteTitle.classList.remove("form-control");
+      takeNoteTitle.classList.remove("is-invalid");
+    }
   }
 };
 
@@ -83,13 +98,13 @@ function deleteNote(note) {
   localStorage.setItem("notes", JSON.stringify(notes));
   document.getElementById("addNoteBtn").innerHTML = "Add Note";
   addNoteBtn.classList.replace("bg-warning", "bg-success");
-  document.getElementById("takeNoteTitle").value = "";
-  document.getElementById("takeNoteText").value = "";
+  takeNoteTitle.value = "";
+  takeNoteText.value = "";
 }
 
 function editNote(index) {
-  document.getElementById("takeNoteTitle").value = notes[index].title;
-  document.getElementById("takeNoteText").value = notes[index].text;
+  takeNoteTitle.value = notes[index].title;
+  takeNoteText.value = notes[index].text;
   noteIndex = index;
   addNoteBtn.innerHTML = "Update Note";
   addNoteBtn.classList.replace("bg-success", "bg-warning");
@@ -98,14 +113,14 @@ function editNote(index) {
 }
 
 function updateNote(noteIndex) {
-  notes[noteIndex].title = document.getElementById("takeNoteTitle").value;
-  notes[noteIndex].text = document.getElementById("takeNoteText").value;
+  notes[noteIndex].title = takeNoteTitle.value;
+  notes[noteIndex].text = takeNoteText.value;
   displayNotes();
   localStorage.setItem("notes", JSON.stringify(notes));
   document.getElementById("addNoteBtn").innerHTML = "Add Note";
   addNoteBtn.classList.replace("bg-warning", "bg-success");
-  document.getElementById("takeNoteTitle").value = "";
-  document.getElementById("takeNoteText").value = "";
+  takeNoteTitle.value = "";
+  takeNoteText.value = "";
   addnoteHeader.innerHTML = "ADD NEW NOTE";
 }
 
