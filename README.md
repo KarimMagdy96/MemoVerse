@@ -29,7 +29,7 @@ Here're some of the project's best features:
 
 <h2>🛠️ Installation Steps:</h2>
 
-<p>1. Download Project file 🔻.</p>
+<p>1. Download Project files 🔻.</p>
 
 <p>2. Extract It 🤐.</p>
 
