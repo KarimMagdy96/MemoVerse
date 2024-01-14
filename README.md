@@ -49,4 +49,5 @@ Technologies used in the project:
 
 <h2>💖Like my work?</h2>
 
-👋 Connect with me on LinkedIn to stay updated on my latest projects and professional journey. Let's connect and grow together! Connect on https://www.linkedin.com/in/karimmagdy96
+👋 Connect with me on LinkedIn to stay updated on my latest projects and professional journey. Let's connect and grow together!
+  Connect on https://www.linkedin.com/in/karimmagdy96
