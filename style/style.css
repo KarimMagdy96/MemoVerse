@@ -6,7 +6,7 @@
 }
 body {
   font-family: "Kumbh Sans", sans-serif !important;
-  background-color: #eaeaea !important;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,8 +19,13 @@ nav {
   background-color: #d4d4d4;
 }
 .logoTitle {
-  color: #38323e !important;
   font-weight: 800;
+}
+.logoTitleDay {
+  color: #38323e !important;
+}
+.logoTitleNight {
+  color: white !important;
 }
 .takeNoteForm {
   max-width: max-content;
@@ -59,8 +64,13 @@ footer {
   background-color: #d6dee1;
   border-radius: 20px;
 }
-.credit {
+.creditDay {
   background-color: #eaeaea;
+  color: #2d2e32;
+}
+.creditNight {
+  background-color: #2d2e32;
+  color: white;
 }
 
 .darkToggle {
@@ -90,4 +100,10 @@ footer {
 }
 .sun {
   color: goldenrod;
+}
+.darkBody {
+  background-color: #2d2e32 !important;
+}
+.dayBody {
+  background-color: #eaeaea !important;
 }

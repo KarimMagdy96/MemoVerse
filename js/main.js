@@ -12,7 +12,10 @@ var closeToggle = document.getElementById("closeToggle");
 var searchNote = document.getElementById("searchNote");
 var darkToggle = document.getElementById("darkToggle");
 var moon = document.getElementById("moon");
+var logoTitle = document.getElementById("logoTitle");
+var credit = document.getElementById("credit");
 var sun = document.getElementById("sun");
+var nightBody = document.getElementById("nightBody");
 var noteIndex = 0;
 if (localStorage.getItem("notes") != null) {
   var notes = JSON.parse(localStorage.getItem("notes"));
@@ -139,4 +142,19 @@ darkToggle.onclick = function () {
   sun.classList.toggle("disapper");
   moon.classList.toggle("disapper");
   darkToggle.classList.toggle("nightbg");
+  if (moon.classList.contains("disapper") == false) {
+    nightBody.classList.toggle("darkBody");
+    nightBody.classList.remove("dayBody");
+    logoTitle.classList.add("logoTitleNight");
+    logoTitle.classList.remove("logoTitleDay");
+    credit.classList.add("creditNight");
+    credit.classList.remove("creditDay");
+  } else {
+    nightBody.classList.toggle("dayBody");
+    nightBody.classList.remove("darkBody");
+    logoTitle.classList.remove("logoTitleNight");
+    logoTitle.classList.add("logoTitleDay");
+    credit.classList.remove("creditNight");
+    credit.classList.add("creditDay");
+  }
 };
