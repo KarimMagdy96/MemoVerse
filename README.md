@@ -47,10 +47,6 @@ Technologies used in the project:
 *   Bootstrap 5
 *   Fontawesome Icons
 
-<h2>🛡️ License:</h2>
-
-This project is licensed under the
-
 <h2>💖Like my work?</h2>
 
 👋 Connect with me on LinkedIn to stay updated on my latest projects and professional journey. Let's connect and grow together! Connect on https://www.linkedin.com/in/karimmagdy96
