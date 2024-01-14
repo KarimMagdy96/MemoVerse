@@ -10,6 +10,9 @@ var addnoteHeader = document.getElementById("addnoteHeader");
 var takeNoteLayer = document.getElementById("takeNoteLayer");
 var closeToggle = document.getElementById("closeToggle");
 var searchNote = document.getElementById("searchNote");
+var darkToggle = document.getElementById("darkToggle");
+var moon = document.getElementById("moon");
+var sun = document.getElementById("sun");
 var noteIndex = 0;
 if (localStorage.getItem("notes") != null) {
   var notes = JSON.parse(localStorage.getItem("notes"));
@@ -130,4 +133,10 @@ searchNote.onkeyup = function () {
 
     document.getElementById("noteContainer").innerHTML = container;
   }
+};
+
+darkToggle.onclick = function () {
+  sun.classList.toggle("disapper");
+  moon.classList.toggle("disapper");
+  darkToggle.classList.toggle("nightbg");
 };
