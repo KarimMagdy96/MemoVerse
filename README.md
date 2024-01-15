@@ -45,6 +45,7 @@ Technologies used in the project:
 *   Css
 *   Vanilla JS
 *   Bootstrap 5
+*   Local Storage Api
 *   Fontawesome Icons
 
 <h2>💖Like my work?</h2>
